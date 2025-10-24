@@ -10,7 +10,7 @@ modify the yml to change name 'gsfpc_scada_gateway'
 
 1. Compose gateway
 
-	 docker compose up -d 
+	 docker volume create ignition_data docker compose up -d 
 
    
 or 
