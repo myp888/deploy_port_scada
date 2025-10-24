@@ -2,7 +2,6 @@
 
 create Ignition container - gsfpc_scada_gateway
 
-modify the yml to change name 'gsfpc_scada_gateway'
 
 
 
@@ -27,10 +26,10 @@ volume doesn't overwrite or delete if run more than 1
 📁 Folder Structure  
 
     .
-    ├── Dockerfile
-    ├── entrypoint.sh
-    └── modules/
-        └── my-module.modl   # Optional modules  
+    ├── docker-compose.yml
+    ├── README.md
+    
+         
     
 # 
 🔒 Default Credentials
@@ -39,14 +38,14 @@ These are set in the yml file:
 -	Username: pfdagsfpc
 -	Password: password
   
-You can change them by editing the environment variables in the Dockerfile.
+You can change them by editing the environment variables in the yml file.
+
+modify the yml to change name 'gsfpc_scada_gateway'
 
 # 
 💡 Notes
 
--	The gateway restore only happens if the data volume is empty
--	The healthcheck ensures the web UI is accessible at /main/system/console
--	Add more .modl files to the modules/ folder to preload them
+
 
 # 
 📄 License
