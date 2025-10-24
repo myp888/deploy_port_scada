@@ -1,14 +1,12 @@
-docker compose up -d
-
-
-
 # Deploy GSFPC Gateway
 
 create Ignition container - gsfpc_scada_gateway
 
-This project builds a preconfigured Docker image for [Inductive Automation Ignition](https://inductiveautomation.com/), with: 
+modify the yml to change name 'gsfpc_scada_gateway'
 
---- ## 🔧 Quick Start ##
+
+
+## 🔧 Quick Start ##
 
 1. Compose gateway
 
@@ -23,19 +21,9 @@ or
 	 docker run -d --name ignition_gateway -p 8088:8088 -p 8043:8043 -p 8060:8060 -p 8061:8061 -v ignition_data:/usr/local/share/ignition/data -e ACCEPT_IGNITION_EULA=Y -e GATEWAY_ADMIN_PASSWORD=password gsfpc/pfda_scada_image
 
 
-
-docker volume create ignition_data && \
-docker run -d \
-  --name ignition_gateway \
-  -p 8088:8088 -p 8043:8043 -p 8060:8060 -p 8061:8061 \
-  -v ignition_data:/usr/local/share/ignition/data \
-  -e ACCEPT_IGNITION_EULA=Y \
-  -e GATEWAY_ADMIN_PASSWORD=password \
-  my-ignition-image
-
 volume doesn't overwrite or delete if run more than 1
 
-3. Then open: http://localhost:8088
+2. Then open: http://localhost:8088
 
 # 
 📁 Folder Structure  
@@ -43,15 +31,14 @@ volume doesn't overwrite or delete if run more than 1
     .
     ├── Dockerfile
     ├── entrypoint.sh
-    ├── restore.gwbk       # Gateway backup (optional)
     └── modules/
         └── my-module.modl   # Optional modules  
     
 # 
 🔒 Default Credentials
 
-These are set in the Dockerfile:
--	Username: admin
+These are set in the yml file:
+-	Username: pfdagsfpc
 -	Password: password
   
 You can change them by editing the environment variables in the Dockerfile.

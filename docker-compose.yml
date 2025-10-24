@@ -3,7 +3,7 @@ version: "3.8"
 services:
   gsfpc_scada_gateway:
     image: gsfpc/pfda_scada_image
-    container_name: ignition_gateway
+    container_name: gsfpc_scada_gateway
     restart: unless-stopped
     ports:
       - "8088:8088"  # Web interface (HTTP)
