@@ -10,17 +10,19 @@ This project builds a preconfigured Docker image for [Inductive Automation Ignit
 
 --- ## 🔧 Quick Start ##
 
+1. Compose gateway
+
 	 docker compose up -d 
 
-1. Build the Docker image
-   
-     _docker buildx build -t my-ignition-image ._ 
-   
-2. Run it with data persistence
-   
-   _docker volume create ignition_data docker run -p 8088:8088 \ -v ignition_data:/usr/local/bin/ignition/data \ my-ignition-image_
    
 or 
+
+	 docker volume create ignition_data 
+
+ 
+	 docker run -d --name ignition_gateway -p 8088:8088 -p 8043:8043 -p 8060:8060 -p 8061:8061 -v ignition_data:/usr/local/share/ignition/data -e ACCEPT_IGNITION_EULA=Y -e GATEWAY_ADMIN_PASSWORD=password gsfpc/pfda_scada_image
+
+
 
 docker volume create ignition_data && \
 docker run -d \
