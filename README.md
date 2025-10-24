@@ -10,30 +10,14 @@ modify the yml to change name 'gsfpc_scada_gateway'
 
 1. Compose gateway
 
-
-
-	 docker volume create ignition_data 
-
- 
-	 docker 
-
-
-volume doesn't overwrite or delete if run more than 1
-
- 
-	 docker run -d --name ignition_gateway -p 8088:8088 -p 8043:8043 -p 8060:8060 -p 8061:8061 -v ignition_data:/usr/local/share/ignition/data -e ACCEPT_IGNITION_EULA=Y -e GATEWAY_ADMIN_PASSWORD=password gsfpc/pfda_scada_image
-
-
-	 
-
+- docker compose up -d
    
 or 
 
-	 docker volume create ignition_data 
+ - docker volume create ignition_data 
 
- 
-	 docker run -d --name ignition_gateway -p 8088:8088 -p 8043:8043 -p 8060:8060 -p 8061:8061 -v ignition_data:/usr/local/share/ignition/data -e ACCEPT_IGNITION_EULA=Y -e GATEWAY_ADMIN_PASSWORD=password gsfpc/pfda_scada_image
-
+ - docker run -d --name ignition_gateway -p 8088:8088 -p 8043:8043 -p 8060:8060 -p 8061:8061 -v ignition_data:/usr/local/share/ignition/data -e ACCEPT_IGNITION_EULA=Y -e GATEWAY_ADMIN_PASSWORD=password gsfpc/pfda_scada_image
+	 
 
 volume doesn't overwrite or delete if run more than 1
 
