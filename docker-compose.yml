@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  gsfpc_scada_gateway:
+    image: gsfpc/pfda_scada_image
+    container_name: ignition_gateway
+    restart: unless-stopped
+    ports:
+      - "8088:8088"  # Web interface (HTTP)
+      - "8043:8043"  # Web interface (HTTPS)
+      - "8060:8060"  # Gateway internal port
+      - "8061:8061"  # Gateway internal port
+    environment:
+      ACCEPT_IGNITION_EULA: "Y"
+      GATEWAY_ADMIN_PASSWORD: "password"
+    volumes:
+      - ignition_data:/usr/local/share/ignition/data
+
+volumes:
+  ignition_data:
+    name: ignition_data

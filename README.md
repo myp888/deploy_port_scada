@@ -1,13 +1,17 @@
-# gsfpc_buildscada
-Dockerfile to create Ignition Docker Image with Auto-Restore
+docker compose up -d
+
+
+
+# Deploy GSFPC Gateway
+
+create Ignition container - gsfpc_scada_gateway
 
 This project builds a preconfigured Docker image for [Inductive Automation Ignition](https://inductiveautomation.com/), with: 
-- ✅ Automatic gateway restore on first run
-- ✅ Pre-installed `.modl` modules
-- ✅ Persistent gateway data using Docker volumes
-- ✅ Healthcheck support for orchestrators (Docker Compose, Kubernetes, etc.)
 
---- ## 🔧 Quick Start ### 
+--- ## 🔧 Quick Start ##
+
+	 docker compose up -d 
+
 1. Build the Docker image
    
      _docker buildx build -t my-ignition-image ._ 
