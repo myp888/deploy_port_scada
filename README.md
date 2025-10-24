@@ -1,4 +1,4 @@
-# Deploy GSFPC Gateway
+# Deploy SCADA GSFPC Gateway
 
 create Ignition container - gsfpc_scada_gateway
 
